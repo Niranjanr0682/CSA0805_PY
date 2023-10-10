@@ -1,0 +1,25 @@
+1.Create a program that takes an integer as input from the user. Depending
+    on whether the number is positive, negative, or zero, display an
+    appropriate message.
+
+2.Write a program to determine whether a given year is a leap year or not.
+    A leap year is divisible by 4, but not divisible by 100 unless it’s
+    also divisible by 400.
+
+3.Write a program that takes a student’s score as input and assigns a letter
+    grade based on the following grading scale:
+    A: 85-100
+    B: 65-84
+    C: 50-64
+    F: Below 50
+
+4.Write a program that asks the user for a temperature in degrees Celsius.Convert
+    this temperature to Fahrenheit using the formula: Fahrenheit = (Celsius * 9/5) + 32.
+    Then, display the temperature in both Celsius and Fahrenheit. Use `if-else`
+    statement to print a message indicating whether the temperature is “HOT” (above 30°C),
+    “MODERATE” (between 20°C and 30°C), or “COOL” (below 20°C).
+
+5.Build a program asks the user for two numbers and an operation (addition, subtraction,
+    multiplication, or division). Perform the selected operation on the numbers and display
+    the result. Ensure that division by zero is handled gracefully by checking if the second
+    number is zero before performing the division.
