@@ -1,0 +1,14 @@
+1.Write a program to print the numbers from 1 to 10 using a for loop.
+
+2.Write a program that asks the user to enter numbers one by one. Continue reading
+    numbers until the user enters -1. Calculate and print the sum of all the entered
+    numbers (excluding -1).
+
+3.Write a program that uses a for loop to print all even numbers from 1 to 20, but skip
+    the number 10 in the loop using the continue keyword.
+
+4.Write a program that uses nested loops to print a pattern of asterisks in the shape of
+    a right-angled triangle. Allow the user to specify the number of rows in the triangle.
+
+5.Write a program to find the sum of each even number, given range of values. User
+    will determine the range of value by entering the starting value and ending value.
