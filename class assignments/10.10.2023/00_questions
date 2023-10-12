@@ -23,3 +23,14 @@
     multiplication, or division). Perform the selected operation on the numbers and display
     the result. Ensure that division by zero is handled gracefully by checking if the second
     number is zero before performing the division.
+
+6.Create a program that takes a user's input string and performs following string operations.
+    The program should ask the user to input a string, then let user select an operation to
+    manipulate the string and display the outcome at the end of program.
+    String operation:
+            a. Capitalize the string
+            b. Reverse the string
+            c. Display the length of the string
+            d. Find a specific word in a string
+            e. Replace a specific word with a new word
+            f. Extend the string

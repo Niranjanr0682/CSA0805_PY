@@ -2,8 +2,7 @@
 # The program should ask the user to input a string, then let user select an operation to
 # manipulate the string and display the outcome at the end of program.
 # String operation:
-# a. Capitalize the string+
-
+# a. Capitalize the string
 # b. Reverse the string
 # c. Display the length of the string
 # d. Find a specific word in a string
