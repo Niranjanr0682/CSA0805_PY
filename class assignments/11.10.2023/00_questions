@@ -12,3 +12,14 @@
 
 5.Write a program to find the sum of each even number, given range of values. User
     will determine the range of value by entering the starting value and ending value.
+
+6.Create a program that takes a user's input string and performs following string operations.
+    The program should ask the user to input a string, then let user select an operation to
+    manipulate the string and display the outcome at the end of program.
+    String operation:
+            a. Capitalize the string
+            b. Reverse the string
+            c. Display the length of the string
+            d. Find a specific word in a string
+            e. Replace a specific word with a new word
+            f. Extend the string

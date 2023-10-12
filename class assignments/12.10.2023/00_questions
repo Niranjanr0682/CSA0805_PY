@@ -1,0 +1,30 @@
+1.write program to takes two numbers as input from the user, and then handles the
+ZeroDivisionError. if the second number is zero. The code should provide a
+meaningful error message.
+
+2. Write a program to perform an operation between two data types that are not
+compatible (e.g., adding a string and an integer). The program need to handle
+theTypeError` and print a suitable error message.
+
+3. Write a program that asks the user to enter their age as an integer. If the user enters
+a non-integer value, they should handle the `ValueError` and raise a custom
+`InvalidAgeError` exception. They should provide an informative error message with
+the exception.
+
+4. Write a Python program to handle a list of 10 numbers. The program will prompt
+the user to handle any of the following operations.
+        a) Add a new number to the end of the list.
+        b) Remove the first occurrence of a specific number from the list.
+        c) Calculate the sum of all the numbers in the list.
+        d) Find the min and max value of the list
+        e) Sort the list in descending order
+        f) Create a sub list based on user input (index or item)
+
+5. Write a Python program to handle a predefined list with mixture of data (numbers,
+characters). The program will prompt the user to handle any of the following
+operations.
+        a) Add a new string to the a specific location of the list.
+        b) Extend the list with new number
+        c) Find the number of occurrence of a specific item in the list
+        d) Sort the list in descending order
+        e) Replace the item with another new item
