@@ -1,0 +1,14 @@
+1. Write a function that takes a list of numbers and returns a tuple containing the sum
+and average of the numbers.
+
+2. Create a dictionary of student names and a corresponding tuple of their exam
+scores. Write a program to find and display the name of the student with the highest
+score.
+
+3. Write a program that takes a list of dictionaries, where each dictionary represents a
+person with keys 'name' and 'age'. Calculate and display the average age of all the
+people in the list.
+
+4. Given a list of tuples, each containing a student's name and their scores in three
+subjects, calculate and display the average score for each student. Store the results
+in a dictionary with student names as keys and average scores as values.
