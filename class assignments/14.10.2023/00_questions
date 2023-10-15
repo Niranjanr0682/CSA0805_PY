@@ -12,3 +12,21 @@ people in the list.
 4. Given a list of tuples, each containing a student's name and their scores in three
 subjects, calculate and display the average score for each student. Store the results
 in a dictionary with student names as keys and average scores as values.
+
+5. Write the following content into a file called studentlist.txt
+        Hari Prasanth
+        Dinesh Raj
+        Magaraju Mohith
+        Teja sri
+
+6. Write a program that reads the content of file in q1 and display it on the screen.
+
+7. Write a program that amend the Q2 and counts the number of student in it. Print
+the student count at the end of the program.
+
+8. Write a program to prompts user for a new name and appends it to an existing text
+file.
+
+9. Write a program that update the studentlist file, user should be able to specify the
+search and replacement words, the program will search for searches for a specific
+word, and replaces it with another word based on user’s input.
