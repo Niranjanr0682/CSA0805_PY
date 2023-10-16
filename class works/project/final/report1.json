@@ -1,0 +1,18 @@
+{
+    "hardware": [
+        {
+            "id": "m001",
+            "name": "monitor",
+            "status": "good",
+            "description": "computer lab"
+        }
+    ],
+    "software": [
+        {
+            "id": "p001",
+            "name": "photoshot",
+            "status": "activated",
+            "description": "2023v"
+        }
+    ]
+}
