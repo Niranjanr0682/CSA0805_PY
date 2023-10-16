@@ -138,7 +138,7 @@ def display_resources():
         print(f"|{resource_type.capitalize()} resources:{"":<51}|")
         for resource in resource_list:
             print(f"| {resource_type[:1].upper():<6} | {resource['id']:4} | {resource['name'][:20]:<19} "
-                  f"| {resource['status']:8} | {resource['description'][:20]:<19} |")
+                  f"| {resource['status']:<8} | {resource['description']:<19} |")
         print("|______________________________________________________________________|")
     # print("________________________________________________________________________")
 
