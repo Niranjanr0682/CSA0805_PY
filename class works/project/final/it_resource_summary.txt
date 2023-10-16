@@ -4,8 +4,23 @@ ____________________________________________________________________________
 |  Type  |  ID  |    Resource Name    |    status    |    description      |
 |__________________________________________________________________________|
 |Hardware resources:                                                       |
-| H      | m001 | monitor             | good         | computer lab        |
+|   H    | m001 |       Moniter       |     good     |    netorking lab    |
+|   H    | m002 |       Moniter       |     good     |    netorking lab    |
+|   H    | m003 |       Moniter       |     poor     |       repair        |
+|   H    | m004 |       Moniter       |     poor     |       repair        |
+|   H    | k001 |      keyboard       |   moderate   |    computer lab     |
+|   H    | k002 |      keyboard       |   moderate   |    computer lab     |
+|   H    | k003 |      keyboard       |   moderate   |    computer lab     |
 |__________________________________________________________________________|
 |Software resources:                                                       |
-| S      | p001 | photoshop           | activated    | 2023v               |
+|   S    | l001 |        linux        |  activated   |     version 2.0     |
+|   S    | l002 |        linux        |  activated   |     version 2.0     |
+|   S    | l003 |        linux        |  activated   |     version 2.0     |
+|   S    | w001 |       windows       |     good     |    version 11.0     |
+|   S    | w002 |       windows       |     good     |    version 11.0     |
+|   S    | p001 |      photoshop      |    super     |    visualisation    |
+|   S    | p002 |      photoshop      |    super     |    visualisation    |
+|   S    | p003 |      photoshop      |    super     |    visualisation    |
+|   S    | p004 |      photoshop      |    super     |    visualisation    |
+|   S    | p005 |      photoshop      |    super     |    visualisation    |
 |__________________________________________________________________________|

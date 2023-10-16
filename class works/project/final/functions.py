@@ -1,5 +1,6 @@
 import json
 import os
+import string
 
 DATA_FILE = 'it_resource_data.json'
 resources = {
@@ -30,8 +31,8 @@ def save_to_text_file():
         for resource_type, resource_list in resources.items():
             file.write(f"|{resource_type.capitalize()} resources:{"":<55}|\n")
             for resource in resource_list:
-                file.write(f"| {resource_type[:1].upper():<6} | {resource['id']:4} | {resource['name'][:20]:<19} "
-                           f"| {resource['status']:12} | {resource['description'][:20]:<19} |\n")
+                file.write(f"| {resource_type[:1].upper():^6} | {resource['id']:^4} | {resource['name'][:20]:^19} "
+                           f"| {resource['status']:^12} | {resource['description'][:20]:^19} |\n")
             file.write("|__________________________________________________________________________|\n")
     print("__________________________________")
     print("| text file created successfully |")
@@ -40,7 +41,12 @@ def save_to_text_file():
 
 def add_resource():
     resource_type = get_resource_type()
-    name = input("Enter resource name: ").strip()
+    while True:
+        name = input("Enter resource name: ").strip()
+        if is_valid_name(name):
+            break
+        else:
+            print("Invalid name. Please enter a valid name.")
     quantity = get_valid_integer("Enter quantity: ")
     if quantity > 1:
         status = input("Enter status: ").strip()
@@ -53,7 +59,7 @@ def add_resource():
                 else:
                     add_resource_data(resource_type, resource_id, name, quantity, status, description)
                     break
-        add_resource_data(resource_type, resource_id, name, quantity, status, description)
+
     else:
         while True:
             resource_id = input("Enter resource ID: ")
@@ -67,7 +73,7 @@ def add_resource():
 
 
 def add_resource_data(resource_type, resource_id, name, quantity, status, description):
-    resource = {'id': resource_id, 'name': name, 'quantity': quantity, 'status': status,'description': description}
+    resource = {'id': resource_id, 'name': name, 'quantity': quantity, 'status': status, 'description': description}
     resources[resource_type].append(resource)
     save_data()
 
@@ -87,10 +93,10 @@ def update_resource():
             for resource_type, resource_list in resources.items():
                 for resource in resource_list:
                     if resource['id'] == resource_id_to_update:
-                        found = True
                         print(f"Resource Name: {resource['name']}")
+                        print(f"Current Status: {resource['status']}")
                         print(f"Current Description: {resource['description']}")
-                        status = input("Enter status: ")
+                        status = input("Enter new status: ")
                         new_description = input(
                             "Enter new resource description (or press Enter to keep current): ").strip()
                         new_description = new_description if new_description else resource['description']
@@ -114,33 +120,33 @@ def search_resource(name):
     for resource_type, resource_list in resources.items():
         for resource in resource_list:
             if resource['name'] == name:
-                print("____________________________________________________________________")
-                print(f"| Resource found in {resource_type.capitalize()} resources: {"":<25}  |")
-                print("|__________________________________________________________________|")
-                print("|   ID   |     Resource Name     | status |       description      |")
-                print("|__________________________________________________________________|")
+                print("________________________________________________________________________")
+                print(f"| Resource found in {resource_type.capitalize()}:{"":<40}  |")
+                print("|______________________________________________________________________|")
+                print("|   ID   |     Resource Name     |   status   |       description      |")
+                print("|______________________________________________________________________|")
                 print(
-                    f"|{resource['id']:<8}|{resource['name']:<22} "
-                    f"|{resource['status']:<10}| {resource['description']:<21}|")
-                print("|__________________________________________________________________|")
+                    f"|{resource['id']:^8}|{resource['name']:^22} "
+                    f"|{resource['status']:^12}| {resource['description']:^23}|")
+                print("|______________________________________________________________________|")
                 found = True
+
     if not found:
         print("Resource not found.")
 
 
 def display_resources():
-    print("________________________________________________________________________")
-    print("|                          IT Resource Summary                         |")
-    print("|______________________________________________________________________|")
-    print("|  Type  |  ID  |    Resource Name    |  status  |    description      |")
-    print("|______________________________________________________________________|")
+    print("____________________________________________________________________________")
+    print("|                            IT Resource Summary                           |")
+    print("|__________________________________________________________________________|")
+    print("|  Type  |  ID  |    Resource Name    |    status    |    description      |")
+    print("|__________________________________________________________________________|")
     for resource_type, resource_list in resources.items():
-        print(f"|{resource_type.capitalize()} resources:{"":<51}|")
+        print(f"|{resource_type.capitalize()} resources:{"":<55}|")
         for resource in resource_list:
-            print(f"| {resource_type[:1].upper():<6} | {resource['id']:4} | {resource['name'][:20]:<19} "
-                  f"| {resource['status']:<8} | {resource['description']:<19} |")
-        print("|______________________________________________________________________|")
-    # print("________________________________________________________________________")
+            print(f"| {resource_type[:1].upper():^6} | {resource['id']:^4} | {resource['name'][:20]:^19} "
+                  f"| {resource['status']:^12} | {resource['description']:^19} |")
+        print("|__________________________________________________________________________|")
 
 
 def display_resource_names_by_type():
@@ -151,7 +157,52 @@ def display_resource_names_by_type():
         unique_names.add(resource['name'])
 
     for name in unique_names:
-        print(name)
+        print(f"-> {name}")
+
+
+def remove_resource_by_type():
+    resource_type = get_resource_type()
+    print(f"\nResources in {resource_type.capitalize()}")
+    print("==============================")
+    for resource in resources[resource_type]:
+        print(f"ID: {resource['id']}, Name: {resource['name']}")
+    while True:
+        try:
+            resource_id_to_remove = input("Enter the ID of the resource to remove: ").strip()
+            found = False
+            for resource in resources[resource_type]:
+                if resource['id'] == resource_id_to_remove:
+                    found = True
+                    print(f"Removing {resource['name']} from {resource_type.capitalize()}...")
+                    resources[resource_type].remove(resource)
+                    save_data()
+                    print("Resource removed successfully.")
+                    break
+            if not found:
+                print("Invalid resource ID. Please try again.")
+                break
+        except ValueError:
+            print("Invalid input. Please enter a valid integer for the resource ID.")
+        break
+
+
+def display_resources_by_status():
+    status = input("Enter status to sort: ").strip().lower()
+    found = False
+    for resource_type, resource_list in resources.items():
+        print(f"Resources with status '{status.capitalize()}' on {resource_type} :                 ")
+        print("___________________________________________________________")
+        print("|   ID   |    Resource Name    |       description        |")
+        print("|_________________________________________________________|")
+        for resource in resource_list:
+            if resource['status'].lower() == status:
+                print(
+                    f"|{resource['id']:^8}|{resource['name']:^20} "
+                    f"|{resource['description']:^26}|")
+                print("|_________________________________________________________|")
+                found = True
+    if not found:
+        print("No resources found with the specified status.")
 
 
 def generate_report():
@@ -159,18 +210,18 @@ def generate_report():
         'hardware': resources['hardware'],
         'software': resources['software']
     }
-    with open('report1.json', 'w') as file:
+    with open('report.json', 'w') as file:
         json.dump(report_data, file, indent=4)
     print("Report generated and saved to report.json.")
 
 
 def resource_statistics():
-    print("________________________________")
-    print("|  Total resources statistics  |")
-    print("|______________________________|")
+    print("__________________________________")
+    print("|   Total resources statistics   |")
+    print("|________________________________|")
     for resource_type, resource_list in resources.items():
-        print(f"|Total {resource_type.capitalize()} resources: {len(resource_list):<4}|")
-        print("|______________________________|")
+        print(f"|  Total {resource_type.capitalize()} resources: {len(resource_list):^4}|")
+        print("|________________________________|")
 
 
 def get_resource_type():
@@ -193,6 +244,12 @@ def get_valid_integer(prompt):
             return value
         except ValueError as e:
             print(f"Invalid input: {e}")
+
+
+def is_valid_name(name):
+    if all(char in string.ascii_letters + ' ' for char in name):
+        return True
+    return False
 
 
 def clear_all_data():

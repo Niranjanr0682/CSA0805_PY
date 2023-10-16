@@ -1,26 +1,12 @@
 def remove_resource_by_type():
-    # print("Select resource type:")
-    # print("1. Hardware")
-    # print("2. Software")
-    # resource_type_choice = input("Enter your choice (1 or 2): ").strip()
-    #
-    # if resource_type_choice == '1':
-    #     resource_type = 'hardware'
-    # elif resource_type_choice == '2':
-    #     resource_type = 'software'
-    # else:
-    #     print("Invalid choice. Please enter '1' for hardware or '2' for software.")
-    #     return
-
+    resource_type = get_resource_type()
     print(f"\nResources in {resource_type.capitalize()}")
     print("==============================")
-
     for resource in resources[resource_type]:
         print(f"ID: {resource['id']}, Name: {resource['name']}")
-
     while True:
         try:
-            resource_id_to_remove = int(input("Enter the ID of the resource to remove: ").strip())
+            resource_id_to_remove = input("Enter the ID of the resource to remove: ").strip()
             found = False
             for resource in resources[resource_type]:
                 if resource['id'] == resource_id_to_remove:
