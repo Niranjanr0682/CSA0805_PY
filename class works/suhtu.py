@@ -123,23 +123,28 @@
 # functions.py
 
 # ... (other functions) ...
+#
+# def display_resources_by_status():
+#     status = input("Enter status to sort: ").strip().lower()
+#     found = False
+#     print(f"\nResources with status '{status.capitalize()}'")
+#     for resource_type, resource_list in resources.items():
+#         print("__________________________________________________________________________")
+#         print("|         f"\nResources with status '{status.capitalize()}'"             |")
+#         print("|________________________________________________________________________|")
+#         print("|  Type  |   ID   |    Resource Name    |  status  |    description      |")
+#         print("|________________________________________________________________________|")
+#         for resource in resource_list:
+#             if resource['status'].lower() == status:
+#                 print(
+#                     f"|{resource_type[:1].upper():<6} |{resource['id']:<8}|{resource['name']:<22} "
+#                     f"|{resource['status']:<10}| {resource['description']:<21}|")
+#                 print("|____________________________________________________________________|")
+#                 found = True
+#     if not found:
+#         print("No resources found with the specified status.")
+#
 
-def display_resources_by_status():
-    status = input("Enter status to sort: ").strip().lower()
-    found = False
-    print(f"\nResources with status '{status.capitalize()}'")
-    for resource_type, resource_list in resources.items():
-        print("__________________________________________________________________________")
-        print("|         f"\nResources with status '{status.capitalize()}'"             |")
-        print("|________________________________________________________________________|")
-        print("|  Type  |   ID   |    Resource Name    |  status  |    description      |")
-        print("|________________________________________________________________________|")
-        for resource in resource_list:
-            if resource['status'].lower() == status:
-                print(
-                    f"|{resource_type[:1].upper():<6} |{resource['id']:<8}|{resource['name']:<22} "
-                    f"|{resource['status']:<10}| {resource['description']:<21}|")
-                print("|____________________________________________________________________|")
-                found = True
-    if not found:
-        print("No resources found with the specified status.")
+
+
+

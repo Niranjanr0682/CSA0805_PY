@@ -2,124 +2,33 @@
     "hardware": [
         {
             "id": "m001",
-            "name": "Moniter",
-            "quantity": 4,
+            "name": "Monitor",
+            "quantity": 1,
             "status": "good",
-            "description": "netorking lab"
-        },
-        {
-            "id": "m002",
-            "name": "Moniter",
-            "quantity": 4,
-            "status": "good",
-            "description": "netorking lab"
-        },
-        {
-            "id": "m003",
-            "name": "Moniter",
-            "quantity": 4,
-            "status": "poor",
-            "description": "repair"
-        },
-        {
-            "id": "m004",
-            "name": "Moniter",
-            "quantity": 4,
-            "status": "poor",
-            "description": "repair"
+            "description": "computer lab"
         },
         {
             "id": "k001",
-            "name": "keyboard",
+            "name": "Keyboard",
             "quantity": 3,
-            "status": "moderate",
-            "description": "computer lab"
+            "status": "good",
+            "description": "working"
         },
         {
             "id": "k002",
-            "name": "keyboard",
+            "name": "Keyboard",
             "quantity": 3,
-            "status": "moderate",
-            "description": "computer lab"
-        },
-        {
-            "id": "k003",
-            "name": "keyboard",
-            "quantity": 3,
-            "status": "moderate",
-            "description": "computer lab"
+            "status": "poor",
+            "description": "repair"
         }
     ],
     "software": [
         {
-            "id": "l001",
-            "name": "linux",
-            "quantity": 3,
-            "status": "activated",
-            "description": "version 2.0"
-        },
-        {
-            "id": "l002",
-            "name": "linux",
-            "quantity": 3,
-            "status": "activated",
-            "description": "version 2.0"
-        },
-        {
-            "id": "l003",
-            "name": "linux",
-            "quantity": 3,
-            "status": "activated",
-            "description": "version 2.0"
-        },
-        {
             "id": "w001",
             "name": "windows",
-            "quantity": 3,
-            "status": "good",
+            "quantity": 1,
+            "status": "activated",
             "description": "version 11.0"
-        },
-        {
-            "id": "w002",
-            "name": "windows",
-            "quantity": 3,
-            "status": "good",
-            "description": "version 11.0"
-        },
-        {
-            "id": "p001",
-            "name": "photoshop",
-            "quantity": 5,
-            "status": "super",
-            "description": "visualisation"
-        },
-        {
-            "id": "p002",
-            "name": "photoshop",
-            "quantity": 5,
-            "status": "super",
-            "description": "visualisation"
-        },
-        {
-            "id": "p003",
-            "name": "photoshop",
-            "quantity": 5,
-            "status": "super",
-            "description": "visualisation"
-        },
-        {
-            "id": "p004",
-            "name": "photoshop",
-            "quantity": 5,
-            "status": "super",
-            "description": "visualisation"
-        },
-        {
-            "id": "p005",
-            "name": "photoshop",
-            "quantity": 5,
-            "status": "super",
-            "description": "visualisation"
         }
     ]
 }

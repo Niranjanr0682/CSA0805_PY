@@ -42,33 +42,30 @@ def save_to_text_file():
 def add_resource():
     resource_type = get_resource_type()
     while True:
-        name = input("Enter resource name: ").strip()
+        name = get_non_empty_input("Enter resource name: ").strip()
         if is_valid_name(name):
             break
-        else:
-            print("Invalid name. Please enter a valid name.")
     quantity = get_valid_integer("Enter quantity: ")
     if quantity > 1:
-        status = input("Enter status: ").strip()
-        description = input("Enter resource description: ").strip()
+        status = get_non_empty_input("Enter status: ").strip()
+        description = get_non_empty_input("Enter resource description: ").strip()
         for i in range(quantity):
             while True:
-                resource_id = input(f"Enter resource ID for item {i + 1}: ").strip()
+                resource_id = get_non_empty_input(f"Enter resource ID for item {i + 1}: ").strip()
                 if not is_id_unique(resource_id, resource_type):
                     print("ID already exists. Please choose a different ID.")
                 else:
                     add_resource_data(resource_type, resource_id, name, quantity, status, description)
                     break
-
     else:
         while True:
-            resource_id = input("Enter resource ID: ")
+            resource_id = get_non_empty_input("Enter resource ID: ")
             if not is_id_unique(resource_id, resource_type):
                 print("ID already exists. Please choose a different ID.")
             else:
                 break
-        status = input("Enter status: ").strip()
-        description = input("Enter resource description: ").strip()
+        status = get_non_empty_input("Enter resource status: ").strip()
+        description = get_non_empty_input("Enter resource description: ").strip()
         add_resource_data(resource_type, resource_id, name, quantity, status, description)
 
 
@@ -78,17 +75,10 @@ def add_resource_data(resource_type, resource_id, name, quantity, status, descri
     save_data()
 
 
-def is_id_unique(resource_id, resource_type):
-    for resource in resources[resource_type]:
-        if resource['id'] == resource_id:
-            return False
-    return True
-
-
 def update_resource():
     while True:
         try:
-            resource_id_to_update = (input("Enter the ID of the resource to update: ").strip())
+            resource_id_to_update = get_non_empty_input("Enter the ID of the resource to update: ").strip()
             found = False
             for resource_type, resource_list in resources.items():
                 for resource in resource_list:
@@ -96,9 +86,9 @@ def update_resource():
                         print(f"Resource Name: {resource['name']}")
                         print(f"Current Status: {resource['status']}")
                         print(f"Current Description: {resource['description']}")
-                        status = input("Enter new status: ")
+                        status = get_non_empty_input("Enter new status: ")
                         new_description = input(
-                            "Enter new resource description (or press Enter to keep current): ").strip()
+                            "Enter new resource description (press Enter to keep current): ").strip()
                         new_description = new_description if new_description else resource['description']
                         resource['status'] = status
                         resource['description'] = new_description
@@ -118,19 +108,18 @@ def update_resource():
 def search_resource(name):
     found = False
     for resource_type, resource_list in resources.items():
+        print("________________________________________________________________________")
+        print(f"| Resource found in {resource_type.capitalize()}:{"":<40}  |")
+        print("|______________________________________________________________________|")
+        print("|   ID   |     Resource Name     |   status   |       description      |")
+        print("|______________________________________________________________________|")
         for resource in resource_list:
             if resource['name'] == name:
-                print("________________________________________________________________________")
-                print(f"| Resource found in {resource_type.capitalize()}:{"":<40}  |")
-                print("|______________________________________________________________________|")
-                print("|   ID   |     Resource Name     |   status   |       description      |")
-                print("|______________________________________________________________________|")
                 print(
                     f"|{resource['id']:^8}|{resource['name']:^22} "
                     f"|{resource['status']:^12}| {resource['description']:^23}|")
-                print("|______________________________________________________________________|")
                 found = True
-
+        print("|______________________________________________________________________|")
     if not found:
         print("Resource not found.")
 
@@ -163,12 +152,12 @@ def display_resource_names_by_type():
 def remove_resource_by_type():
     resource_type = get_resource_type()
     print(f"\nResources in {resource_type.capitalize()}")
-    print("==============================")
+    print("______________________________")
     for resource in resources[resource_type]:
         print(f"ID: {resource['id']}, Name: {resource['name']}")
     while True:
         try:
-            resource_id_to_remove = input("Enter the ID of the resource to remove: ").strip()
+            resource_id_to_remove = get_non_empty_input("Enter the ID of the resource to remove: ").strip()
             found = False
             for resource in resources[resource_type]:
                 if resource['id'] == resource_id_to_remove:
@@ -187,7 +176,7 @@ def remove_resource_by_type():
 
 
 def display_resources_by_status():
-    status = input("Enter status to sort: ").strip().lower()
+    status = get_non_empty_input("Enter status to sort: ").strip().lower()
     found = False
     for resource_type, resource_list in resources.items():
         print(f"Resources with status '{status.capitalize()}' on {resource_type} :                 ")
@@ -242,14 +231,31 @@ def get_valid_integer(prompt):
             if value < 0:
                 raise ValueError("Quantity cannot be negative.")
             return value
-        except ValueError as e:
-            print(f"Invalid input: {e}")
+        except ValueError:
+            print(f"Invalid input: enter valid number ")
 
 
 def is_valid_name(name):
     if all(char in string.ascii_letters + ' ' for char in name):
         return True
+    print("invalid character used. Please enter valid name")
     return False
+
+
+def is_id_unique(resource_id, resource_type):
+    for resource in resources[resource_type]:
+        if resource['id'] == resource_id:
+            return False
+    return True
+
+
+def get_non_empty_input(prompt):
+    while True:
+        user_input = input(prompt).strip()
+        if user_input:
+            return user_input
+        else:
+            print("Input cannot be empty. Please try again.")
 
 
 def clear_all_data():
