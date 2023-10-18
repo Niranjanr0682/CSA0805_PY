@@ -43,10 +43,6 @@ def main():
         if choice == 'a':
             hard_soft()
             add_resource()
-            print("\n"
-                  "_______________________________\n"
-                  "| Resource added successfully |\n"
-                  "|_____________________________|\n")
         elif choice == 'b':
             update_resource()
         elif choice == 'c':

@@ -1,13 +1,19 @@
-____________________________________________________________________________
-|                            IT Resource Summary                           |
-|__________________________________________________________________________|
-|  Type  |  ID  |    Resource Name    |    status    |    description      |
-|__________________________________________________________________________|
-|Hardware resources:                                                       |
-|   H    | m001 |       Monitor       |     good     |    computer lab     |
-|   H    | k001 |      Keyboard       |     good     |       working       |
-|   H    | k002 |      Keyboard       |     poor     |       repair        |
-|__________________________________________________________________________|
-|Software resources:                                                       |
-|   S    | w001 |       windows       |  activated   |    version 11.0     |
-|__________________________________________________________________________|
+_________________________________________________________________________________
+|                              IT Resource Summary                              |
+|_______________________________________________________________________________|
+|  Type  |  ID  |    Resource Name    |    status    |      description         |
+|_______________________________________________________________________________|
+|Hardware resources:                                                            |
+|   H    | mnl01 |       monitor       |     good     |       network lab       |
+|   H    | mnl02 |       monitor       |     good     |       network lab       |
+|   H    | mnl03 |       monitor       |     good     |       network lab       |
+|   H    | mnl04 |       monitor       |     good     |       network lab       |
+|   H    | mnl05 |       monitor       |     good     |       network lab       |
+|_______________________________________________________________________________|
+|Software resources:                                                            |
+|   S    | wnl01 |       windows       |  activated   |        win11 pro        |
+|   S    | wnl02 |       windows       |  activated   |        win11 pro        |
+|   S    | wnl03 |       windows       |  activated   |        win11 pro        |
+|   S    | wnl04 |       windows       |  activated   |        win11 pro        |
+|   S    | wnl05 |       windows       |  activated   |        win11 pro        |
+|_______________________________________________________________________________|

@@ -1,22 +1,18 @@
-import pandas as pd
+# Use the data from csv file (previous lesson) to create a bar chart using Matplotlib to
+# visualize any data of your choice. Ensure that the chart is clear and visually appealing
+# (color, label and title).
+
 import matplotlib.pyplot as plt
+import pandas as pd
 
-# Load data from CSV
 data = pd.read_csv('C://other stuffs//P for Programming//Github//SIMATS//Python project//data.csv')
-# Assuming your CSV has columns 'Category' and 'Value'
-categories = data['PlacementStatus']
-values = data['CGPA']
+df = pd.DataFrame(data)
 
-# Plotting the bar chart
-plt.figure(figsize=(10, 6))  # Adjust the figure size as needed
-plt.bar( values,categories, color=['skyblue','black'])
+X = list(df.iloc[:, 0])
+Y = list(df.iloc[:, 1])
 
-# Adding labels and title
-plt.ylabel('Categories')
-plt.xlabel('Values')
-plt.title('Bar Chart of Values by Categories')
-
-# Show the plot
-plt.xticks(rotation=45)  # Rotate x-axis labels for better visibility
-plt.tight_layout()  # Adjust layout to prevent clipping of labels
+plt.bar(X, Y, color='g')
+plt.title("Students over 11 Years")
+plt.xlabel("Years")
+plt.ylabel("Number of Students")
 plt.show()

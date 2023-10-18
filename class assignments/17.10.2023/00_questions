@@ -1,0 +1,11 @@
+1. Use the data from csv file (previous lesson) to create a bar chart using Matplotlib to
+visualize any data of your choice. Ensure that the chart is clear and visually appealing
+(color, label and title).
+
+2. Perform a performance review with your group assignment using cProfileV package.
+Identify the function that consumes the most time and provide a summary of your
+profiling results.
+
+3. Write a program that reads a dataset containing information on diamonds (previous
+lesson db file). Utilize a any visualization library of your choice to create a scatter
+plot.

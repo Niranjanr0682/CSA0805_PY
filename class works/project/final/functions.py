@@ -23,17 +23,17 @@ def load_data():
 
 def save_to_text_file():
     with open('it_resource_summary.txt', 'w') as file:
-        file.write("____________________________________________________________________________\n")
-        file.write("|                            IT Resource Summary                           |\n")
-        file.write("|__________________________________________________________________________|\n")
-        file.write("|  Type  |  ID  |    Resource Name    |    status    |    description      |\n")
-        file.write("|__________________________________________________________________________|\n")
+        file.write("_________________________________________________________________________________\n")
+        file.write("|                              IT Resource Summary                              |\n")
+        file.write("|_______________________________________________________________________________|\n")
+        file.write("|  Type  |  ID  |    Resource Name    |    status    |      description         |\n")
+        file.write("|_______________________________________________________________________________|\n")
         for resource_type, resource_list in resources.items():
-            file.write(f"|{resource_type.capitalize()} resources:{"":<55}|\n")
+            file.write(f"|{resource_type.capitalize()} resources:{"":<60}|\n")
             for resource in resource_list:
                 file.write(f"| {resource_type[:1].upper():^6} | {resource['id']:^4} | {resource['name'][:20]:^19} "
-                           f"| {resource['status']:^12} | {resource['description'][:20]:^19} |\n")
-            file.write("|__________________________________________________________________________|\n")
+                           f"| {resource['status']:^12} | {resource['description'][:20]:^23} |\n")
+            file.write("|_______________________________________________________________________________|\n")
     print("__________________________________")
     print("| text file created successfully |")
     print("|________________________________|")
@@ -55,8 +55,12 @@ def add_resource():
                 if not is_id_unique(resource_id, resource_type):
                     print("ID already exists. Please choose a different ID.")
                 else:
-                    add_resource_data(resource_type, resource_id, name, quantity, status, description)
+                    add_resource_data(resource_type, resource_id, name, status, description)
                     break
+        print("\n"
+              "_______________________________\n"
+              "| Resource added successfully |\n"
+              "|_____________________________|\n")
     else:
         while True:
             resource_id = get_non_empty_input("Enter resource ID: ")
@@ -66,11 +70,15 @@ def add_resource():
                 break
         status = get_non_empty_input("Enter resource status: ").strip()
         description = get_non_empty_input("Enter resource description: ").strip()
-        add_resource_data(resource_type, resource_id, name, quantity, status, description)
+        print("\n"
+              "_______________________________\n"
+              "| Resource added successfully |\n"
+              "|_____________________________|\n")
+        add_resource_data(resource_type, resource_id, name, status, description)
 
 
-def add_resource_data(resource_type, resource_id, name, quantity, status, description):
-    resource = {'id': resource_id, 'name': name, 'quantity': quantity, 'status': status, 'description': description}
+def add_resource_data(resource_type, resource_id, name, status, description):
+    resource = {'id': resource_id, 'name': name, 'status': status, 'description': description}
     resources[resource_type].append(resource)
     save_data()
 
@@ -125,17 +133,17 @@ def search_resource(name):
 
 
 def display_resources():
-    print("____________________________________________________________________________")
-    print("|                            IT Resource Summary                           |")
-    print("|__________________________________________________________________________|")
-    print("|  Type  |  ID  |    Resource Name    |    status    |    description      |")
-    print("|__________________________________________________________________________|")
+    print("_________________________________________________________________________________")
+    print("|                               IT Resource Summary                             |")
+    print("|_______________________________________________________________________________|")
+    print("|  Type  |  ID  |    Resource Name    |    status    |       description        |")
+    print("|_______________________________________________________________________________|")
     for resource_type, resource_list in resources.items():
-        print(f"|{resource_type.capitalize()} resources:{"":<55}|")
+        print(f"|{resource_type.capitalize()} resources:{"":<60}|")
         for resource in resource_list:
             print(f"| {resource_type[:1].upper():^6} | {resource['id']:^4} | {resource['name'][:20]:^19} "
-                  f"| {resource['status']:^12} | {resource['description']:^19} |")
-        print("|__________________________________________________________________________|")
+                  f"| {resource['status']:^12} | {resource['description']:^23} |")
+        print("|_______________________________________________________________________________|")
 
 
 def display_resource_names_by_type():
@@ -256,6 +264,10 @@ def get_non_empty_input(prompt):
             return user_input
         else:
             print("Input cannot be empty. Please try again.")
+
+
+# def check_for_exit(user_input):
+#     return user_input.lower() == 'exit'
 
 
 def clear_all_data():

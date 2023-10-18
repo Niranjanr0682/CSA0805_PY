@@ -1,4 +1,102 @@
 {
-    "hardware": [],
-    "software": []
+    "hardware": [
+        {
+            "id": "mnl01",
+            "name": "monitor",
+            "status": "good",
+            "description": "network lab"
+        },
+        {
+            "id": "mnl02",
+            "name": "monitor",
+            "status": "good",
+            "description": "network lab"
+        },
+        {
+            "id": "mnl03",
+            "name": "monitor",
+            "status": "good",
+            "description": "network lab"
+        },
+        {
+            "id": "mnl04",
+            "name": "monitor",
+            "status": "good",
+            "description": "network lab"
+        },
+        {
+            "id": "pnl01",
+            "name": "printer",
+            "status": "working",
+            "description": "networklab"
+        },
+        {
+            "id": "pnl02",
+            "name": "printer",
+            "status": "working",
+            "description": "networklab"
+        },
+        {
+            "id": "wnl01",
+            "name": "webcam",
+            "status": "good",
+            "description": "network lab"
+        },
+        {
+            "id": "wnl02",
+            "name": "webcam",
+            "status": "good",
+            "description": "network lab"
+        },
+        {
+            "id": "mnl05",
+            "name": "monitor",
+            "status": "not working",
+            "description": "need to repair"
+        },
+        {
+            "id": "tnl01",
+            "name": "trackpad",
+            "status": "working",
+            "description": "network lab"
+        },
+        {
+            "id": "tnl02",
+            "name": "trackpad",
+            "status": "working",
+            "description": "network lab"
+        }
+    ],
+    "software": [
+        {
+            "id": "wnl01",
+            "name": "windows",
+            "status": "activated",
+            "description": "win11 pro"
+        },
+        {
+            "id": "wnl02",
+            "name": "windows",
+            "status": "activated",
+            "description": "win11 pro"
+        },
+        {
+            "id": "wnl03",
+            "name": "windows",
+            "status": "activated",
+            "description": "win11 pro"
+        },
+        {
+            "id": "wnl04",
+            "name": "windows",
+            "status": "activated",
+            "description": "win11 pro"
+        },
+        {
+            "id": "wnl05",
+            "name": "windows",
+            "status": "activated",
+            "description": "win11 pro"
+        }
+    ]
 }
