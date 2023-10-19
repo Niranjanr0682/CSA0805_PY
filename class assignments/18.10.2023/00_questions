@@ -1,0 +1,19 @@
+1.  Write a Python function that takes the list as input and returns the sum of the all the
+positive numbers.
+
+2.   A text file containing a list of names, one name per line as follow.
+            Amin
+            Abdullah
+            Prakash
+            Rajkumar
+            Sandeep
+            Sajith
+Write a Python program to read the file, extract the names that end with the letter
+'h', and write them to a new text file called filter.txt. Include error handling for file
+operations.
+
+3. The dataset containing information about students and their achievement on the
+management and domain specific. Read the data from dataset provide to perform
+the following.
+    a. Find the student with the highest and lowest score for management.
+    b. Plot a chart to show the average score for management and domain specific achievement.

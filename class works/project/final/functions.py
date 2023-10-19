@@ -221,6 +221,18 @@ def resource_statistics():
         print("|________________________________|")
 
 
+def clear_all_data():
+    global resources
+    resources = {
+        'hardware': [],
+        'software': []
+    }
+    print("____________________")
+    print("| All data cleared |")
+    print("|__________________|")
+    save_data()
+
+
 def get_resource_type():
     while True:
         resource_type_choice = input("Enter resource type : ").strip()
@@ -270,13 +282,4 @@ def get_non_empty_input(prompt):
 #     return user_input.lower() == 'exit'
 
 
-def clear_all_data():
-    global resources
-    resources = {
-        'hardware': [],
-        'software': []
-    }
-    print("____________________")
-    print("| All data cleared |")
-    print("|__________________|")
-    save_data()
+

@@ -1,4 +1,4 @@
-# Create a dictionary of student names and a corresponding tuple of their exam
+# Create a dictionary of student names.txt and a corresponding tuple of their exam
 # scores. Write a program to find and display the name of the student with the highest
 # score.
 

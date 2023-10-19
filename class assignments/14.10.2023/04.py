@@ -1,6 +1,6 @@
 # Given a list of tuples, each containing a student's name and their scores in three
 # subjects, calculate and display the average score for each student. Store the results
-# in a dictionary with student names as keys and average scores as values.
+# in a dictionary with student names.txt as keys and average scores as values.
 
 def calculate_average_scores(student_scores):
     average_scores = {}
