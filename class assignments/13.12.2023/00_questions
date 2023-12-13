@@ -1,0 +1,23 @@
+1.Write a program that prints the numbers from 1 to 100. But for multiples of three, print 'Fizz'
+    instead of the number, and for the multiples of five, print 'Buzz'. For numbers that are
+    multiples of both three and five, print 'FizzBuzz'
+
+2.Write a function to calculate the factorial of a given number.
+
+3.Write a function to check if a given string is a palindrome.
+
+4.Write a function to check if a given number is prime.
+
+5.Create a list of squares of numbers from 1 to 10 using list comprehension.
+
+6.Write a function to reverse a string.
+
+7.Given a dictionary, write a program to print the keys and values in alphabetical order.
+
+8.Read a text file, count the number of occurrences of each word, and print the results.
+
+9.Create a class representing a geometric shape with methods to calculate its area
+    and perimeter.Then, create subclasses for specific shapes like rectangle and circle.
+
+10.Write a program that takes user input for a number and handles exceptions if
+    the input is not a valid number.
