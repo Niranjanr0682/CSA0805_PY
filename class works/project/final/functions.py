@@ -125,7 +125,7 @@ def search_resource(name):
             if resource['name'] == name:
                 print(
                     f"|{resource['id']:^8}|{resource['name']:^22} "
-                    f"|{resource['status']:^12}| {resource['description']:^23}|")
+                    f"|{resource['status']:^12}| {resource['description']:^24}|")
                 found = True
         print("|______________________________________________________________________|")
     if not found:
@@ -142,12 +142,13 @@ def display_resources():
         print(f"|{resource_type.capitalize()} resources:{"":<60}|")
         for resource in resource_list:
             print(f"| {resource_type[:1].upper():^6} | {resource['id']:^4} | {resource['name'][:20]:^19} "
-                  f"| {resource['status']:^12} | {resource['description']:^23} |")
+                  f"| {resource['status']:^12} | {resource['description']:^24} |")
         print("|_______________________________________________________________________________|")
 
 
 def display_resource_names_by_type():
     resource_type = get_resource_type()
+
 
     unique_names = set()
     for resource in resources[resource_type]:

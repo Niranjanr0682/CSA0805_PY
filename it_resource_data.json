@@ -1,0 +1,30 @@
+{
+    "hardware": [
+        {
+            "id": "m101",
+            "name": "monitor",
+            "status": "new",
+            "description": "lab room"
+        },
+        {
+            "id": "m102",
+            "name": "monitor",
+            "status": "new",
+            "description": "lab room"
+        }
+    ],
+    "software": [
+        {
+            "id": "w101",
+            "name": "windows",
+            "status": "activated",
+            "description": "labroom"
+        },
+        {
+            "id": "s101",
+            "name": "spss",
+            "status": "cracked",
+            "description": "data analytics lab"
+        }
+    ]
+}

@@ -4,9 +4,10 @@ ________________________________________________________________________________
 |  Type  |  ID  |    Resource Name    |    status    |      description         |
 |_______________________________________________________________________________|
 |Hardware resources:                                                            |
-|   H    | 101m |       monitor       |     good     |           lab           |
-|   H    | 102m |       monitor       |     good     |           lab           |
-|   H    | 103m |       monitor       |     good     |           lab           |
+|   H    | m101 |       monitor       |     new      |        lab room         |
+|   H    | m102 |       monitor       |     new      |        lab room         |
 |_______________________________________________________________________________|
 |Software resources:                                                            |
+|   S    | w101 |       windows       |  activated   |         labroom         |
+|   S    | s101 |        spss         |   cracked    |   data analytics lab    |
 |_______________________________________________________________________________|
